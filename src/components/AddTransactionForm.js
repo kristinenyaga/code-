@@ -5,7 +5,7 @@ function AddTransactionForm({addTransaction}) {
     date:"",
     category:"",
     description:"",
-    amount:""
+    amount:0
   })
 
   function handleOnChange(e){
@@ -13,12 +13,14 @@ function AddTransactionForm({addTransaction}) {
       ...allInput,[e.target.name]:e.target.value
     })
     
-   
   }
+
   function handlesubmit(e){
     e.preventDefault()
     addTransaction(allInput)
   }
+
+    
   return (
     <div className="ui segment">
       <form className="ui form" onSubmit={handlesubmit}>
